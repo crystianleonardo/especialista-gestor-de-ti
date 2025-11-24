@@ -4,15 +4,15 @@ document.getElementById("contactForm").addEventListener("submit", function (even
     if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
+
         form.classList.add("was-validated");
+
         const firstInvalid = form.querySelector(":invalid");
         if (firstInvalid) firstInvalid.focus();
+
         return;
     }
 
     event.preventDefault();
     document.getElementById("submitSuccessMessage").classList.remove("d-none");
-
-    form.reset();
-    form.classList.remove("was-validated");
 });
